@@ -1,4 +1,4 @@
-// Store pairs as objects
+
 let pairs = [];
 
 function validateInput(input) {
@@ -14,7 +14,7 @@ function addPair() {
     const match = validateInput(input);
 
     if (!match) {
-        errorDiv.textContent = "Invalid format. Use: name=value (alphanumeric only)";
+        errorDiv.textContent = "Invalid format. Use: name=value (a-z and numbers only)";
         return;
     }
 
@@ -31,7 +31,7 @@ function addPair() {
 
 function updateList() {
     const listBox = document.getElementById("listBox");
-    listBox.innerHTML = "";
+    listBox.innerText = "";
 
     pairs.forEach((pair, index) => {
         const option = document.createElement("option");
@@ -42,18 +42,18 @@ function updateList() {
 }
 
 function sortByName() {
-    pairs.sort((a, b) => a.name.localeCompare(b.name));
+    pairs.sort((a, b) => a.name > b.name ? 1 : -1);
     updateList();
 }
 
 function sortByValue() {
-    pairs.sort((a, b) => a.value.localeCompare(b.value));
+    pairs.sort((a, b) => a.value > b.value ? 1 : -1);
     updateList();
 }
 
 function deleteSelected() {
     const listBox = document.getElementById("listBox");
-    const selected = Array.from(listBox.selectedOptions).map(opt => Number(opt.value));
+    const selected = Array.from(listBox.selectedOptions).map(opt => +opt.value);
 
     // Remove selected items
     pairs = pairs.filter((_, index) => !selected.includes(index));

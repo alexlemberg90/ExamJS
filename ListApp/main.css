@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #5f8fbf, #2f5f8f);
+    background:#2f5f8f;
 }
 
 .wrapper {
@@ -39,15 +39,14 @@ input {
 button {
     padding: 6px 12px;
     border: 1px solid #999;
-    background: linear-gradient(#fff, #ccc);
-    cursor: pointer;
+    background: #ccc;
 }
 
 button:hover {
-    background: linear-gradient(#fff, #bbb);
+    background: #bbb;
 }
 
-.main {
+main {
     display: flex;
     gap: 20px;
 }
@@ -60,6 +59,7 @@ select {
 
 .list-container {
     flex: 1;
+    min-width: 0;
 }
 
 .side-buttons {
@@ -74,18 +74,23 @@ select {
     margin-bottom: 10px;
 }
 
-/* Responsive */
+/* Медіа */
 @media (max-width: 600px) {
     .main {
         flex-direction: column;
     }
 
-    .top-row {
-        flex-direction: column;
+    .list-container {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+        height: 180px;
     }
 
     .side-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        width: 40%;
     }
 }
