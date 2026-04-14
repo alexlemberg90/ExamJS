@@ -53,9 +53,8 @@ function sortByValue() {
 
 function deleteSelected() {
     const listBox = document.getElementById("listBox");
-    const selected = Array.from(listBox.selectedOptions).map(opt => +opt.value);
+    const selected = Array.from(listBox.selectedOptions).map(item => +item.value);
 
-    // Remove selected items
     pairs = pairs.filter((_, index) => !selected.includes(index));
 
     updateList();
