@@ -1,0 +1,36 @@
+#post {
+    background: #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#loadComments {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+#comments {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.comment {
+    background: #eee;
+    padding: 10px;
+}
+
+.btn-home {
+    display: block;
+    background-color: #eee;
+    border: 1px solid #292929;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    margin: 20px auto;
+    width: 80%;
+}

@@ -26,13 +26,12 @@ document.getElementById('loadComments').onclick = () => {
             const container = document.getElementById('comments');
             container.innerHTML = '';
 
-            for (let comment of comments) {
-                console.log(comment);
+            for (let {body} of comments) {
                 const div = document.createElement('div');
                 div.className = 'comment';
 
                 div.innerHTML = `
-                    <p>${comment.body}</p>
+                    <p>${body}</p>
                 `;
 
 
